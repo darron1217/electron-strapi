@@ -13,3 +13,7 @@
 ## 실행
 
 1. `npm run app`
+
+## 빌드 (윈도우)
+
+1. `npm run pack:win`

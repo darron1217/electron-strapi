@@ -2,6 +2,8 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const strapi = require('strapi/lib/Strapi')
+const log = require('electron-log')
+Object.assign(console, log.functions);
 
 function createWindow () {
   // Create the browser window.
@@ -16,6 +18,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   strapi({
+    dir: __dirname + '/',
     autoReload: true,
     serveAdminPanel: true,
   }).start().then(() => {

@@ -10,14 +10,17 @@
     "build": "strapi build",
     "strapi": "strapi",
     "app": "electron .",
-    "build:win": "electron-builder --win"
+    "build:win": "electron-builder --win",
+    "pack:win": "electron-packager . --platform=win32"
   },
   "devDependencies": {
     "electron": "^10.1.1",
     "electron-builder": "^22.8.0",
+    "electron-packager": "^15.1.0",
     "electron-rebuild": "^2.0.1"
   },
   "dependencies": {
+    "electron-log": "^4.2.4",
     "knex": "<0.20.0",
     "sqlite3": "latest",
     "strapi": "3.1.4",
