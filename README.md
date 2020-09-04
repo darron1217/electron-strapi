@@ -1,3 +1,9 @@
-# electron-strapi
+# Strapi application
 
-strapi 일렉트론버전
+## 설치
+
+1. `npm install` 실행
+
+2. `npm start` 실행
+
+3. (sharp 에러나면) `electron-rebuild` 실행
