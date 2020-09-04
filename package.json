@@ -30,7 +30,6 @@
     "strapi-plugin-users-permissions": "3.1.4",
     "strapi-utils": "3.1.4"
   },
-  "postinstall": "electron-builder install-app-deps",
   "author": {
     "name": "A Strapi developer"
   },

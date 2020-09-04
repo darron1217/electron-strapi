@@ -19,13 +19,13 @@ function createWindow () {
     autoReload: true,
     serveAdminPanel: true,
   }).start().then(() => {
-    mainWindow.loadURL('http://localhost:1337/');
+    mainWindow.loadURL('http://127.0.0.1:1337/');
   }).catch((e) => {
     console.log(e);
   });
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

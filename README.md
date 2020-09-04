@@ -2,8 +2,14 @@
 
 ## 설치
 
-1. `npm install` 실행
+1. (윈도우의 경우) `npm install --global windows-build-tools`
 
-2. `npm start` 실행
+2. `npm install`
 
-3. (sharp 에러나면) `electron-rebuild` 실행
+3. `npm run build`
+
+4. `electron-rebuild`
+
+## 실행
+
+1. `npm run app`
