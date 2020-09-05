@@ -1,9 +1,24 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
-const strapi = require('strapi/lib/Strapi')
-const log = require('electron-log')
-Object.assign(console, log.functions);
+const { fork } = require('child_process')
+
+function startServer (win) {
+  // and load the index.html of the app.
+  const strapi = fork(path.join(__dirname, 'serve.js'))
+
+  strapi.on('message', (m) => {
+    if(m == 'ready') {
+      win.loadURL('http://127.0.0.1:1337/');
+    }
+    if(m == 'reload') {
+      strapi.kill()
+      startServer(win)
+    }
+    console.log('Got message:', m);
+  });
+
+}
 
 function createWindow () {
   // Create the browser window.
@@ -16,16 +31,12 @@ function createWindow () {
     }
   })
 
-  // and load the index.html of the app.
-  strapi({
-    dir: __dirname,
-    autoReload: true,
-    serveAdminPanel: true,
-  }).start().then(() => {
-    mainWindow.loadURL('http://127.0.0.1:1337/');
-  }).catch((e) => {
-    console.log(e);
-  });
+  mainWindow.webContents.on('new-window', (event, url) => {
+    event.preventDefault()
+    mainWindow.loadURL(url)
+  })
+
+  startServer(mainWindow)
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

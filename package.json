@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "electron strapi",
-    "build:win": "electron-packager strapi --platform=win32"
+    "build:win": "electron-packager strapi --platform=win32 --overwrite"
   },
   "repository": {
     "type": "git",

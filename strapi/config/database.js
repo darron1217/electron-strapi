@@ -1,5 +1,3 @@
-const homedir = require('os').homedir();
-
 module.exports = ({ env }) => ({
   defaultConnection: 'default',
   connections: {
@@ -7,7 +5,7 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'sqlite',
-        filename: env('DATABASE_FILENAME', homedir + '/strapi.db'),
+        filename: env('DATABASE_FILENAME', 'db/strapi.db'),
       },
       options: {
         useNullAsDefault: true,
