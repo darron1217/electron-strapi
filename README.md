@@ -1,4 +1,4 @@
-# Strapi application
+# Electron Strapi application
 
 ## 설치
 
