@@ -1,57 +1,25 @@
 {
   "name": "electron-strapi",
-  "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
-  "main": "main.js",
-  "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi",
-    "app": "electron .",
-    "build:win": "electron-builder --win",
-    "pack:win": "electron-packager . --platform=win32"
-  },
+  "version": "1.0.0",
+  "description": "Electron + Strapi",
+  "dependencies": {},
   "devDependencies": {
     "electron": "^10.1.1",
-    "electron-builder": "^22.8.0",
     "electron-packager": "^15.1.0",
     "electron-rebuild": "^2.0.1"
   },
-  "dependencies": {
-    "electron-log": "^4.2.4",
-    "knex": "<0.20.0",
-    "sqlite3": "latest",
-    "strapi": "3.1.4",
-    "strapi-admin": "3.1.4",
-    "strapi-connector-bookshelf": "3.1.4",
-    "strapi-plugin-content-manager": "3.1.4",
-    "strapi-plugin-content-type-builder": "3.1.4",
-    "strapi-plugin-email": "3.1.4",
-    "strapi-plugin-upload": "git+https://github.com/darron1217/strapi-plugin-upload.git",
-    "strapi-plugin-users-permissions": "3.1.4",
-    "strapi-utils": "3.1.4"
+  "scripts": {
+    "start": "electron strapi",
+    "build:win": "electron-packager strapi --platform=win32"
   },
-  "author": {
-    "name": "A Strapi developer"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darron1217/electron-strapi.git"
   },
-  "strapi": {
-    "uuid": "09fd85c4-0649-4097-80fd-4fe5dbc7faf0"
-  },
-  "engines": {
-    "node": ">=10.0.0",
-    "npm": ">=6.0.0"
-  },
+  "author": "",
   "license": "MIT",
-  "build": {
-    "appId": "com.strapi",
-    "mac": {
-      "category": "public.app-category.productivity"
-    },
-    "win": {
-      "target": "portable"
-    },
-    "npmRebuild": false
-  }
+  "bugs": {
+    "url": "https://github.com/darron1217/electron-strapi/issues"
+  },
+  "homepage": "https://github.com/darron1217/electron-strapi#readme"
 }

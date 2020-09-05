@@ -112,5 +112,3 @@ license.txt
 exports
 .cache
 build
-dist
-strapi-*/

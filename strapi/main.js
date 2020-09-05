@@ -18,7 +18,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   strapi({
-    dir: __dirname + '/',
+    dir: __dirname,
     autoReload: true,
     serveAdminPanel: true,
   }).start().then(() => {
