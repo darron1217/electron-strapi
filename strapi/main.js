@@ -2,10 +2,17 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const { fork } = require('child_process')
+const log = require('electron-log')
+
+Object.assign(console, log.functions);
 
 function startServer (win) {
   // and load the index.html of the app.
-  const strapi = fork(path.join(__dirname, 'serve.js'))
+  const strapi = fork(path.join(__dirname, 'serve.js'), { silent : true })
+
+  strapi.stdout.on('data', function (data) {
+    console.log(data.toString().trimEnd());
+  });
 
   strapi.on('message', (m) => {
     if(m == 'ready') {

@@ -1,9 +1,4 @@
 const strapi = require('strapi/lib/Strapi')
-const log = require('electron-log')
-
-if(process.env.NODE_ENV == 'production') {
-  Object.assign(console, log.functions);
-}
 
 strapi({
   dir: __dirname,
@@ -12,6 +7,7 @@ strapi({
 }).start().then(() => {
   process.send('ready')
 }).catch((e) => {
+  process.send('error')
   console.log(e);
 })
 
