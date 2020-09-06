@@ -16,7 +16,7 @@ function startServer (win) {
 
   strapi.on('message', (m) => {
     if(m == 'ready') {
-      win.loadURL('http://127.0.0.1:1337/');
+      win.loadURL('http://127.0.0.1:100/');
     }
     if(m == 'reload') {
       strapi.kill()
