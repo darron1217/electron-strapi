@@ -3,6 +3,7 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const { fork } = require('child_process')
 const log = require('electron-log')
+const {host, port} = require('./config/server')
 
 Object.assign(console, log.functions);
 
@@ -16,7 +17,7 @@ function startServer (win) {
 
   strapi.on('message', (m) => {
     if(m == 'ready') {
-      win.loadURL('http://127.0.0.1:100/');
+      win.loadURL(`http://${host}:${port}/`);
     }
     if(m == 'reload') {
       strapi.kill()
