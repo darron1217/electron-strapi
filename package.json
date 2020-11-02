@@ -9,9 +9,11 @@
     "electron-rebuild": "^2.0.1"
   },
   "scripts": {
+    "setup": "npm --prefix ./strapi run build",
     "start": "electron ./strapi",
-    "build": "electron-builder",
-    "minor": "npm --prefix ./strapi version minor"
+    "build": "npm run setup && electron-builder",
+    "minor": "npm --prefix ./strapi version minor",
+    "postinstall": "npm --prefix ./strapi install && npm run setup"
   },
   "repository": {
     "type": "git",
