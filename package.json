@@ -12,7 +12,7 @@
     "setup": "npm --prefix ./strapi run build",
     "start": "electron ./strapi",
     "build": "electron-builder",
-    "strapi:minor": "npm --prefix ./strapi version minor",
+    "minor": "npm version minor && npm --prefix ./strapi version minor",
     "postinstall": "npm --prefix ./strapi install && npm run setup"
   },
   "repository": {
