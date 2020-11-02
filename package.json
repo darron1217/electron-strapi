@@ -11,7 +11,7 @@
   "scripts": {
     "setup": "npm --prefix ./strapi run build",
     "start": "electron ./strapi",
-    "build": "npm run setup && electron-builder",
+    "build": "electron-builder",
     "minor": "npm --prefix ./strapi version minor",
     "postinstall": "npm --prefix ./strapi install && npm run setup"
   },
